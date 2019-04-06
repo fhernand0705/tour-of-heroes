@@ -9,8 +9,10 @@ import { HEROES } from '../mock-heroes';
 })
 
 export class HeroesComponent implements OnInit {
+  //defining heroes property for template binding
   heroes = HEROES;
   selectedHero: Hero;
+  //method defined for click event binding
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }

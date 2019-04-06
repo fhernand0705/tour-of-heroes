@@ -8,6 +8,7 @@ import { Hero } from '../hero';
 })
 
 export class HeroDetailComponent implements OnInit {
+  //defining hero property for template binding
   @Input() hero: Hero;
   constructor() { }
 
