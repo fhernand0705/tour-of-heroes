@@ -18,8 +18,8 @@ import { MessagesComponent }    from './messages/messages.component';
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
+    AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
