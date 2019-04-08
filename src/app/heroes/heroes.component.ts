@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -9,8 +10,7 @@ import { HeroService } from '../hero.service';
 })
 
 export class HeroesComponent implements OnInit {
-  selectedHero: Hero;
-  heroes = Hero; //defining heroes property for template binding
+  heroes: Hero[]; //defining heroes property for template binding
 
   constructor(private heroService: HeroService) { }
 
@@ -18,12 +18,8 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void { //method for click event binding
-    this.selectedHero = hero;
-  }
-
   getHeroes(): void { //method to receive list of heroes when called
     this.heroService.getHeroes()
-        .subscribe(heroes => this.heroes = heroes);
+    .subscribe(heroes => this.heroes = heroes);
   }
 }
