@@ -5,6 +5,7 @@ import { Hero } from './hero';
 @Injectable({
   providedIn: 'root'
 })
+
 export class InMemoryDataService implements InMemoryDbService {
 
   constructor() { }
@@ -17,12 +18,21 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 14, name: 'Khaleesi' },
       { id: 15, name: 'Samwell' },
       { id: 16, name: 'Brienne' },
-      { id: 17, name: 'Sir Davoss' },
+      { id: 17, name: 'Sir Davos' },
       { id: 18, name: 'Brandon' },
       { id: 19, name: 'Tyrion' },
       { id: 20, name: 'Jamie' }
     ];
-    return {heroes};
+    const houses = [
+      {id: 1, name: "House Stark"},
+      {id: 2, name: "House Lannister"},
+      {id: 3, name: "House Targaryen"},
+      {id: 4, name: "House Tarley"},
+      {id: 5, name: "House Seaworth"},
+      {id: 6, name: "House Tarth"}
+    ];
+    return {heroes, houses};
+
   }
 
   // Overrides the genId method to ensure that a hero always has an id.
